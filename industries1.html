@@ -836,19 +836,24 @@
                     <div class="owl-carousel owl-theme show-nav-hover"
                         data-plugin-options="{'items': 5, 'autoplay': true, 'autoplayTimeout': 2000, 'margin': 200, 'loop': true, 'nav': true, 'dots': false}">
                         <div>
-                            <img alt="" class="img-fluid rounded" src="/frontend/img/certificates/aar.png">
+                            <img alt="" class="img-fluid rounded"
+                                src="https://lifexstrap.com/frontend/img/certificates/aar.png">
                         </div>
                         <div>
-                            <img alt="" class="img-fluid rounded" src="/frontend/img/certificates/tse.png">
+                            <img alt="" class="img-fluid rounded"
+                                src="https://lifexstrap.com/frontend/img/certificates/dnv.png">
                         </div>
                         <div>
-                            <img alt="" class="img-fluid rounded" src="/frontend/img/certificates/iso14001.png">
+                            <img alt="" class="img-fluid rounded"
+                                src="	https://lifexstrap.com/frontend/img/certificates/tse.png">
                         </div>
                         <div>
-                            <img alt="" class="img-fluid rounded" src="/frontend/img/certificates/dnv.png">
+                            <img alt="" class="img-fluid rounded"
+                                src="https://lifexstrap.com/frontend/img/certificates/iso14001.png">
                         </div>
                         <div>
-                            <img alt="" class="img-fluid rounded" src="/frontend/img/certificates/iso9001.png">
+                            <img alt="" class="img-fluid rounded" src="https://lifexstrap.com/frontend/img/certificates/dnv.png
+">
                         </div>
                     </div>
                 </div>
@@ -1236,6 +1241,27 @@
 
     <!-- Theme Initialization Files -->
     <script src="js/theme.init.js"></script>
+
+    <script src="js/examples/examples.gallery.js"></script>
+    <script>
+        document.querySelector('.header-btn-collapse-nav').addEventListener('click', function () {
+            var button = this;
+            var nav = document.querySelector('#mainNav');
+
+            var isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !isExpanded);
+
+            if (isExpanded) {
+                nav.classList.remove('show');  // Menüden `show` sınıfını kaldırır
+            } else {
+                nav.classList.add('show');  // Menüye `show` sınıfını ekler
+            }
+        });
+
+    </script>
+    <script>
+        document.getElementById('referrer').value = window.location.href;
+    </script>
 
 </body>
 
