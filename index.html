@@ -449,8 +449,9 @@
         <div role="main" class="main">
 
             <div class="stickyButtons">
-                <a class="btn btn-square btn-xl  text-2 btn-primary mb-2" href="/frontend/img/LIFEX_Catalog_new.pdf"
-                    target="_blank"><i class="fa fa-file-text"></i>Catalog</a>
+                <a class="btn btn-square btn-xl  text-2 btn-primary mb-2"
+                    href="https://lifexstrap.com/frontend/img/LIFEX_Catalog_new.pdf" target="_blank"><i
+                        class="fa fa-file-text"></i>Catalog</a>
 
                 <a class="btn btn-square btn-xl text-2 btn-quaternary mb-2" href="contact.html">
                     <i class="fa fa-comments"></i>Contact
@@ -1094,7 +1095,7 @@
                                         <p class="lead font-weight-regular text-justify"> Lifex is certified by AAR
                                             (Association of American Railroads) for selected lashing and composite
                                             strapping products for open-top loading requirements.</p>
-                                        <a href="co"
+                                        <a href="contact.html"
                                             class="btn btn-light font-weight-bold text-3 btn-px-4 py-3 appear-animation text-color-mpsRed"
                                             data-appear-animation="fadeInRightShorter"
                                             data-appear-animation-delay="550">Contact</a>
@@ -1466,6 +1467,7 @@
                                         aria-selected="true" role="tab">Ataşehir Office</a>
                                 </li>
                                 <li class="nav-item col-lg-6 text-center" role="presentation">
+                                    <br>
                                     <a class="nav-link " href="#tabsNavigationSimple2" data-bs-toggle="tab"
                                         aria-selected="true" role="tab">Factory</a>
                                 </li>
@@ -1757,7 +1759,7 @@
     <script src="/js/theme.js"></script>
 
     <!-- Current Page Vendor and Views -->
-    <script src="/js/views/view.contact.js"></script>
+
 
     <!-- Demo -->
     <script src="/js/demos/demo-cleaning-services.js"></script>
@@ -1769,99 +1771,6 @@
     <!-- Theme Initialization Files -->
     <script src="/js/theme.init.js"></script>
     <script src="/js/examples/examples.gallery.js"></script>
-
-    <script src="/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-    <script src="/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="/vendor/circle-flip-slideshow/js/jquery.flipshow.min.js"></script>
-
-    <script>
-        // Önce header'ın başlangıçtaki Y konumunu alın
-        const header = document.querySelector('header'); // Header elementini seçin
-        let headerStartPosition = header.getBoundingClientRect().top;
-
-        // Ekran genişliğini kontrol edin
-        const mediaQuery = window.matchMedia('(min-width: 1024px)'); // 1024px'den büyük ekranlar için
-
-        const applyLinkStyles = () => {
-            // Scroll sırasında header'ın yeni konumunu alın
-            let headerCurrentPosition = header.getBoundingClientRect().top;
-
-            const links = document.querySelectorAll('#header .header-nav-main nav > ul > li > a');
-
-            if (headerStartPosition !== headerCurrentPosition) {
-                // Sticky
-                links.forEach(link => {
-                    link.style.setProperty('color', 'black', 'important');
-
-                    link.addEventListener('mouseenter', function () {
-                        this.style.setProperty('color', '#ec242b', 'important');
-                    });
-
-                    // Mouse üzerinden çıkıldığında
-                    link.addEventListener('mouseleave', function () {
-                        this.style.setProperty('color', 'black', 'important');
-                    });
-                });
-            } else {
-                // Not sticky
-                links.forEach(link => {
-                    link.style.setProperty('color', 'white', 'important');
-
-                    link.addEventListener('mouseenter', function () {
-                        this.style.setProperty('color', '#ec242b', 'important');
-                    });
-
-                    // Mouse üzerinden çıkıldığında
-                    link.addEventListener('mouseleave', function () {
-                        this.style.setProperty('color', 'white', 'important');
-                    });
-                });
-            }
-        };
-
-        const applyMobileLinkStyles = () => {
-            const links = document.querySelectorAll('#header .header-nav-main nav > ul > li > a');
-            links.forEach(link => {
-
-                if (link.classList.contains('btn')) return;
-
-                link.style.setProperty('color', 'black', 'important');
-
-                link.addEventListener('mouseenter', function () {
-                    this.style.setProperty('color', '#ec242b', 'important');
-                });
-
-                // Mouse üzerinden çıkıldığında
-                link.addEventListener('mouseleave', function () {
-                    this.style.setProperty('color', 'black', 'important');
-                });
-            });
-        };
-
-        const handleScroll = () => {
-            if (mediaQuery.matches) {
-                // Desktop
-                applyLinkStyles();
-            } else {
-                // Mobile
-                applyMobileLinkStyles();
-            }
-        };
-
-        // Scroll eventini dinleyin
-        window.addEventListener('scroll', handleScroll);
-
-        // Sayfa yüklendiğinde kontrol yapın
-        document.addEventListener('DOMContentLoaded', handleScroll);
-
-        // Ekran boyutu değiştiğinde de kontrol yapın
-        mediaQuery.addEventListener('change', handleScroll);
-
-    </script>
-
-    <script>
-        document.getElementById('referrer').value = window.location.href;
-    </script>
 
     <script>
         document.querySelector('.header-btn-collapse-nav').addEventListener('click', function () {
@@ -1876,6 +1785,106 @@
             } else {
                 nav.classList.add('show');  // Menüye `show` sınıfını ekler
             }
+        });
+
+    </script>
+
+
+    <script>
+        document.getElementById('referrer').value = window.location.href;
+    </script>
+
+    <script>
+        window.onload = function () {
+            // Başlık etiketini al
+            var pageTitle = document.querySelector(".product-title h1");
+
+            // Başlık etiketinin içeriğini al
+            var productName = pageTitle.textContent.trim();
+
+            // Input alanına ürün adını yaz
+            document.getElementById("productNameInput").value = productName;
+        };
+    </script>
+
+    <script>
+        // Buton ve popup container'ı al
+        const requestFormButton = document.getElementById("requestFormButton");
+        const popupContainer = document.getElementById("popupContainer");
+
+        // Butona tıklandığında
+        requestFormButton.addEventListener("click", function () {
+            // Popup'ı göster
+            popupContainer.style.display = "block";
+        });
+
+        // Kapatma butonuna tıklandığında veya popup dışına tıklandığında
+        popupContainer.addEventListener("click", function (event) {
+            if (event.target === popupContainer || event.target.id === "closeButton") {
+                // Popup'ı gizle
+                popupContainer.style.display = "none";
+            }
+        });
+
+
+    </script>
+
+    <script>
+
+        document.getElementById('sendEmailButton').addEventListener('click', function (event) {
+            event.preventDefault(); // Tıklama olayını engelle
+            window.location.href = 'mailto:tugberksavas@gmail.com.tr'; // E-posta adresini buraya girin
+        });
+
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Tüm tab linklerini seç
+            var tabLinks = document.querySelectorAll('.my-tabs .my-link');
+
+            // Her bir tab linki için olay dinleyicisi ekle
+            tabLinks.forEach(function (tabLink) {
+                tabLink.addEventListener('click', function () {
+                    // Tüm tab linklerinden 'active' sınıfını kaldır
+                    tabLinks.forEach(function (link) {
+                        link.classList.remove('active');
+                    });
+
+                    // Tıklanan tab linkine 'active' sınıfını ekle
+                    this.classList.add('active');
+
+                    // Tüm tab linklerinin rengini güncelle
+                    updateTabColors();
+                });
+            });
+
+            // Sayfa yüklendiğinde tab renklerini güncelle
+            updateTabColors();
+        });
+
+        // Tab renklerini güncelleyen fonksiyon
+        function updateTabColors() {
+            var activeTab = document.querySelector('.my-tabs .my-link.active');
+            var inactiveTabs = document.querySelectorAll('.my-tabs .my-link:not(.active)');
+
+            // Aktif tabın rengini ayarla
+            activeTab.style.setProperty('color', '#ec242b', 'important'); // Aktif tab kırmızı renkte
+
+            // Pasif tabların rengini ayarla
+            inactiveTabs.forEach(function (tab) {
+                tab.style.setProperty('color', '#6c757d', 'important'); // Pasif tablar gri renkte
+            });
+        }
+
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.links').on('click', 'a', function (event) {
+                event.stopPropagation(); // Tıklama olayını durdurur
+            });
         });
 
     </script>
